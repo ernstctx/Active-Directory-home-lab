@@ -3,23 +3,41 @@
  ### [YouTube Demonstration](https://youtu.be/7eJexJVCqJo)
 
 <h2>Description</h2>
-Project consists of a simple PowerShell script that walks the user through "zeroing out" (wiping) any drives that are connected to the system. The utility allows you to select the target disk and choose the number of passes that are performed. The PowerShell script will configure a diskpart script file based on the user's selections and then launch Diskpart to perform the disk sanitization.
+Create domain controller (Win Server 2019) on Virtual Machine using Oracle VirtualBox. Domain controller boasts an internal network adapter (assigned IP address) and an external network adapter NIC (DHCP enabled). Install Active Directory on the Win Server 2019 and create a domain: <cayedomain.com> Configure NAT and routing –permits client users on private network to access the internet through the domain controller. Setup DHCP (1 Scope) on the domain controller--Range:172.16.0.100-200/Mask:255.255.255.0/Gateway:172.168.01/DNS:172.16.0.1 DHCP permits client pc joined to domain to automatically obtain IP address.
+<br/> 
+Run PowerShell script>automatically creates 1K users in Active Directory.
+<br/>
+Create/deploy client virtual machine(Windows 10) using Oracle, VirtualBox. The Win10 client machine will be connected to the private network on the WinSer2019, domain controller. Log into the client machine using one of the domain accounts created using PowerShell script.
 <br />
 
 
-<h2>Languages and Utilities Used</h2>
+<h2>Topics</h2>
 
 - <b>PowerShell</b> 
-- <b>Diskpart</b>
+- <b>Active Directory</b>
+- <b>Domain Controller</b>
+- <b>Routing(RAS/NAT)</b>
+- <b>DHCP</b>
+- <b>Organizational Unit</b>
+- <b>Command LineP</b>
+- <b>IP addressing</b>
+- <b>Client</b>
+- <b>Network segmentation</b>
 
-<h2>Environments Used </h2>
+<h2>Environment </h2>
 
-- <b>Windows 10</b> (21H2)
-
-<h2>Program walk-through:</h2>
+- <b>Windows 10</b> 
+- <b>Windows Server 2019</b> 
+- <b>Oracle VirtualBox</b> 
+ 
+<h2>Active Directory lab walk-through:</h2>
 
 <p align="center">
-Launch the utility: <br/>
+Network overview: <br/>
+<img src="https://i.imgur.com/0HQfj07.png" width="80%"
+<br/>
+<br/>
+Next step: <br/>
 <img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
