@@ -37,32 +37,80 @@ Network overview: <br/>
 <img src="https://i.imgur.com/0HQfj07.png" width="80%"
 <br/>
 <br/>
-Next step: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Next step: Visit virtualbox.org to download VirtualBox<br/>
+<img src="https://i.imgur.com/dmSDtJU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/> 
+<br/>
+Next step:download WinSer 2019 ISO
+<img src="https://i.imgur.com/e7z8IKT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Deploy a Virtual Machine:  <br/>
+<img src="https://i.imgur.com/MbFvDLR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br /> 
+<br />
+Oracle VirtualBox^Create 1st Microsoft 2019 VM|Ram 2G=2048 MB, 4 core processor, /net adapater 1 NAT /net adapter 2 internal /Standard desktop experience(GUI)
 <br />
 <br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Configure NIC: <br/> 
+<img src="https://i.imgur.com/XaTLTJ6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+configure NIC^righ+click Network/change adapter option/right+click>rename NIC and specify between gateway and internal NIC. Internal NIC IP:169.254.196.79 <internal >[assign IP address to internal adapter>IPv4 Properties>IP:172.16.0.1/Sub Mask:255.255.255.0/Def Gateway: [blank]] [DNS Server:172.0.0.1]
 <br />
 <br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Configure network adapters and label(identify) inner and outer NIC:  <br/>
+<img src="https://i.imgur.com/rh0BVN0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create domain: Organization Unit  <br/>
+>Right+click Network icon on desktop/
+<br />
+>Install Active Directory^Server Manager dashboard/add roles and features/server location/select server/Active directory Domain Services^
+<br />
+>Active Directory Domain Services Configuration Wizard>add new forest>create domain>name domain. >[mydomainname.com] rename domain once PC reboots
+<br />
+Log into created domain
+<img src="https://i.imgur.com/HPMFKVr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create Organizational Unit | domain admins:  <br/>
+<img src="https://i.imgur.com/R2dSLH9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Organizational Unit | Admins:  <br/> 
+Organizational Unit>Admin account/[  ]>select [mydomainname.com]>right+click>New>Organizational Unit>[_admin]/right+click>New user>create new user
+<img src="https://i.imgur.com/IUjE2SE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+*Naming convention ex. A_ ECayemitte(indicate admin acct for DC/domain0
+>Set up Admin account
+>in Domain Admin>right click properties>add|domain admin
+<img src="https://i.imgur.com/MtX4zf6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Network MAP>install RAS/NAT(Remote access servr/Network address translation) in domain controller>add roles & features>routing 
+<img src="https://i.imgur.com/xbBN08c.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> 
+<br /> 
+Next
+<img src="https://i.imgur.com/NQEi0IW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> 
+<br />
+Next
+<img src="https://i.imgur.com/A4HeUWO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Next
+<img src="https://i.imgur.com/A4HeUWO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+*RAS/NAT allows joined client1 to remain on private network and 
+allowed to access the internet through the domain controller*
+<img src="https://i.imgur.com/rDb6SFI.png" height="80%" width="80%" alt="Disk Sanitization Steps">
+<br />
+<br />
+>domain controller/Server Manager Dashboard/add roles and features/Roles^Remote access>routing>^/^ /install
+<img src="https://i.imgur.com/MPZOQoP.png" height="80%" width="80%" alt="Disk Sanitization Steps">
+<br />
+<br />
+Configure 
+<img src="https://i.imgur.com/MPZOQoP.png" height="80%" width="80%" alt="Disk Sanitization Steps"> 
 </p>
 
 <!--
